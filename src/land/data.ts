@@ -51,6 +51,102 @@ const LAND_DATA: Array<LandData> = [
     fertility: 90,
     tags: ["dirt"],
   },
+  {
+    blockId: "minecraft:oak_wood",
+    fertility: 90,
+    tickCount: 200,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_oak_wood",
+    fertility: 100,
+    tickCount: 180,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:spruce_wood",
+    fertility: 70,
+    tickCount: 160,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_spruce_wood",
+    fertility: 80,
+    tickCount: 140,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:birch_wood",
+    fertility: 80,
+    tickCount: 180,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_birch_wood",
+    fertility: 90,
+    tickCount: 160,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:jungle_wood",
+    fertility: 30,
+    tickCount: 120,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_jungle_wood",
+    fertility: 50,
+    tickCount: 80,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:acacia_wood",
+    fertility: 60,
+    tickCount: 140,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_acacia_wood",
+    fertility: 70,
+    tickCount: 120,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:dark_oak_wood",
+    fertility: 100,
+    tickCount: 250,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_dark_oak_wood",
+    fertility: 110,
+    tickCount: 220,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:mangrove_wood",
+    fertility: 20,
+    tickCount: 100,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_mangrove_wood",
+    fertility: 40,
+    tickCount: 60,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:cherry_wood",
+    fertility: 70,
+    tickCount: 160,
+    tags: ["wood"],
+  },
+  {
+    blockId: "minecraft:stripped_cherry_wood",
+    fertility: 80,
+    tickCount: 140,
+    tags: ["wood"],
+  },
 ] as const;
 
 export default LAND_DATA;

@@ -17,6 +17,8 @@ export type LandData = {
   tags: LandTag | LandTag[];
   /** 肥沃度 */
   fertility: number;
+  /** 可供生长的 tick 总数(菌类会腐蚀木头) */
+  tickCount?: number;
   /** 状态：例如湿润的土地 */
   state?: LandStateData | LandStateData[];
 } & VersionData;

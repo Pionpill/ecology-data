@@ -1,9 +1,9 @@
 import type { PlantData } from "../type";
 
-const CHILI: PlantData = {
+const CHILI_PLANT: PlantData = {
   seedId: "ham:chili",
   blockPrefix: "ham:chili",
-  type: "spices",
+  type: "spice",
   defaultGrowInfo: {
     temperature: {
       suit: [15, 30],
@@ -62,4 +62,4 @@ const CHILI: PlantData = {
   ],
 };
 
-export default CHILI;
+export default CHILI_PLANT;

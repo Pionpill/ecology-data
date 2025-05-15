@@ -74,7 +74,7 @@ export default class PlantModel extends VersionModel {
   private readonly defaultGrowInfo: Required<PlantGrowData<Required<PlantSuitInfo>>>;
   private readonly stageInfo: Array<PlantStageInfo>;
 
-  constructor(
+  private constructor(
     version: string | undefined,
     beta: boolean | undefined,
     seedId: Identifier,

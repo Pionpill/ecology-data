@@ -92,8 +92,8 @@ export type PlantStageData = {
   loots?: PlantLootData | Array<PlantLootData> | null;
 };
 
-/** 作物类型：谷物，菌类，香料，水果，蔬菜 */
-export type PlantType = "crop" | "fungi" | "fungi" | "spices" | "fruit" | "vegetable";
+/** 作物类型：主粮，菌类，香料，水果，蔬菜 */
+export type PlantType = "grain" | "fungi" | "spice" | "fruit" | "vegetable";
 
 /** 作物信息 */
 export type PlantData = {

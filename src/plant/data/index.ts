@@ -1,5 +1,6 @@
 import type { PlantData } from "../type";
+import CHILI_PLANT from "./chili";
 
-const Plant_DATA: Array<PlantData> = [];
+const PLANT_DATA: Array<PlantData> = [CHILI_PLANT];
 
-export default Plant_DATA;
+export default PLANT_DATA;

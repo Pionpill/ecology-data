@@ -10,6 +10,7 @@ import type {
   PlantStageState,
   PlantLootTag,
 } from "./type";
+import { getPlantPrefixFromBlockId } from "./utils";
 
 /** 作物生长信息 */
 export type PlantStageInfo = {
@@ -199,44 +200,35 @@ export default class PlantModel extends VersionModel {
   };
 
   /** 通过种子 id 获取缓存的作物实例 */
-  static fromSeedId = (seedId: Identifier, refresh: boolean = false) => {
-    if (!refresh) {
-      const model = this.seedIdModelMap[seedId];
-      if (model) return model;
-    }
+  static fromSeedId = (seedId: Identifier) => {
+    const model = this.seedIdModelMap[seedId];
+    if (model) return model;
 
     const data = Plant_DATA.find((plant) => plant.seedId === seedId);
     if (!data) {
       throw new Error(`Plant data not found for seedId: ${seedId}`);
     }
-    const model = this.fromDate(data);
-    this.seedIdModelMap[seedId] = model;
-    this.blockPrefixModelMap[model.blockPrefix] = model;
-    return model;
+    const newModel = this.fromDate(data);
+    this.seedIdModelMap[seedId] = newModel;
+    this.blockPrefixModelMap[newModel.blockPrefix] = newModel;
+    return newModel;
   };
 
   /** 通过作物实体 id 获取缓存的作物实例 */
-  static fromBlockId = (blockId: Identifier, refresh: boolean = false) => {
-    const blockIdArray = blockId.split("_");
-    const stageIndex = blockIdArray.findIndex((item) => item === "stage");
-    if (stageIndex === -1) {
-      throw new Error(`Plant blockId is not valid: ${blockId}`);
-    }
-    const blockPrefix = blockIdArray.slice(0, stageIndex).join("");
+  static fromBlockId = (blockId: Identifier) => {
+    const blockPrefix = getPlantPrefixFromBlockId(blockId);
 
-    if (!refresh) {
-      const model = this.blockPrefixModelMap[blockPrefix];
-      if (model) return model;
-    }
+    const model = this.blockPrefixModelMap[blockPrefix];
+    if (model) return model;
 
     const data = Plant_DATA.find((plant) => plant.blockPrefix === blockPrefix);
     if (!data) {
       throw new Error(`Plant data not found for blockPrefix: ${blockPrefix}`);
     }
 
-    const model = this.fromDate(data);
-    this.blockPrefixModelMap[blockPrefix] = model;
-    this.seedIdModelMap[model.seedId] = model;
-    return model;
+    const newModel = this.fromDate(data);
+    this.blockPrefixModelMap[blockPrefix] = newModel;
+    this.seedIdModelMap[newModel.seedId] = newModel;
+    return newModel;
   };
 }

@@ -1,5 +1,5 @@
 import type { Identifier } from "../_common/type";
-import type { BiomeCategory } from "./enum";
+import type { BiomeCategory, BiomeTag } from "./enum";
 
 export type BiomeData = {
   /** 群系id */
@@ -17,5 +17,5 @@ export type BiomeData = {
   /** 雪层厚度 */
   snowAccumulation: [number, number] | null;
   /** 标签 */
-  tags: string[];
+  tags: BiomeTag[];
 };

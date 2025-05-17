@@ -37,11 +37,9 @@ export default class LandModel extends VersionModel {
   };
 
   /** 通过方块 id 获取缓存的土地实例 */
-  static fromBlockId = (blockId: Identifier, refresh: boolean = false) => {
-    if (!refresh) {
-      const model = LandModel.modelMap[blockId];
-      if (model) return model;
-    }
+  static fromBlockId = (blockId: Identifier) => {
+    const model = LandModel.modelMap[blockId];
+    if (model) return model;
 
     const data = LAND_DATA.find((land) => land.blockId === blockId);
     if (!data) {

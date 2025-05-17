@@ -34,11 +34,9 @@ export default class BiomeModel extends VersionModel {
   private static modelMap: Record<Identifier, BiomeModel> = {};
 
   /** 通过群系 id 获取缓存的群系实例 */
-  static fromBiomeId = (biomeId: Identifier, refresh: boolean = false) => {
-    if (!refresh) {
-      const model = BiomeModel.modelMap[biomeId];
-      if (model) return model;
-    }
+  static fromBiomeId = (biomeId: Identifier) => {
+    const model = BiomeModel.modelMap[biomeId];
+    if (model) return model;
 
     const data = BIOME_DATA.find((biome) => biome.biomeId === biomeId);
     if (!data) {

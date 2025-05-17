@@ -1,5 +1,5 @@
 import type { Identifier } from "../_common/type";
-import type { BiomeTag } from "../biome/enum";
+import type { BiomeTag } from "../biome/type";
 import { PlantModel } from "../plant";
 import { getPlantPrefixFromBlockId } from "../plant/utils";
 import FEATURE_DATA from "./data";

@@ -1,12 +1,11 @@
 import { VersionModel } from "../_common/model";
-import type { Identifier } from "../_common/type";
-import BIOME_DATA from "./data";
-import type { BiomeCategory } from "./enum";
-import type { BiomeData } from "./type";
+import { between, hasIntersection } from "../_common/utils";
+import { BIOME_DATA } from "./data";
+import type { BiomeCategory, BiomeData, BiomeFilter, BiomeId } from "./type";
 
 export default class BiomeModel extends VersionModel {
   private constructor(
-    public readonly biomeId: Identifier,
+    public readonly biomeId: BiomeId,
     public readonly rainfall: number,
     public readonly temperature: number,
     public readonly generate: number | null,
@@ -18,8 +17,13 @@ export default class BiomeModel extends VersionModel {
     super();
   }
 
+  private static modelMap: Partial<Record<BiomeId, BiomeModel>> = {};
+
   private static fromData = (data: BiomeData) => {
-    return new BiomeModel(
+    const model = BiomeModel.modelMap[data.biomeId];
+    if (model) return model;
+
+    const newModel = new BiomeModel(
       data.biomeId,
       data.rainfall,
       data.temperature,
@@ -29,20 +33,38 @@ export default class BiomeModel extends VersionModel {
       data.snowAccumulation,
       data.tags
     );
+    BiomeModel.modelMap[data.biomeId] = newModel;
+    return newModel;
   };
 
-  private static modelMap: Record<Identifier, BiomeModel> = {};
-
   /** 通过群系 id 获取缓存的群系实例 */
-  static fromBiomeId = (biomeId: Identifier) => {
-    const model = BiomeModel.modelMap[biomeId];
-    if (model) return model;
-
+  static getById = (biomeId: BiomeId) => {
     const data = BIOME_DATA.find((biome) => biome.biomeId === biomeId);
     if (!data) {
       throw new Error(`Biome data not found for biomeId: ${biomeId}`);
     }
-    BiomeModel.modelMap[biomeId] = BiomeModel.fromData(data);
-    return BiomeModel.modelMap[biomeId];
+    return BiomeModel.fromData(data);
   };
+
+  /** 通过过滤器获取群系对象 */
+  static getByFilter = (filter: BiomeFilter) => {
+    const { rainfall, temperature, generate, dimension, category, tags } = filter;
+    return BIOME_DATA.reduce((acc, biome) => {
+      if (rainfall && !between(biome.rainfall, rainfall)) return acc;
+      if (temperature && !between(biome.temperature, temperature)) return acc;
+      if (generate && (!biome.generate || !between(biome.generate, generate))) return acc;
+      const mergedDimension = dimension instanceof Array ? dimension : [dimension];
+      if (!mergedDimension.includes(biome.dimension)) return acc;
+      const mergedCategory = category instanceof Array ? category : [category];
+      if (!mergedCategory.includes(biome.category)) return acc;
+      const mergedTags = tags instanceof Array ? tags : [tags];
+      if (!hasIntersection(mergedTags, biome.tags)) return acc;
+
+      acc.push(BiomeModel.fromData(biome));
+      return acc;
+    }, [] as BiomeModel[]);
+  };
+
+  /** 获取所有群系对象 */
+  static getAll = () => BIOME_DATA.map((biome) => BiomeModel.fromData(biome));
 }

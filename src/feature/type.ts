@@ -1,5 +1,5 @@
 import type { Identifier } from "../_common/type";
-import type { BiomeTag } from "../biome/enum";
+import type { BiomeTag } from "../biome/type";
 
 export type FeatureData = {
   /** 类型 */

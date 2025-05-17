@@ -52,3 +52,6 @@ export type VanillaFoodInfo = {
   /** 使用后转换为的物品，默认 null */
   usingConvertsTo?: string | null;
 };
+
+/** 支持的语言：中文，英文 */
+export type LangType = "zh" | "en";

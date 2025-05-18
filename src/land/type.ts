@@ -1,7 +1,9 @@
-import type { Identifier, VersionData } from "../_common/type";
+import type { VersionData } from "../_common/type";
+import type { LAND_ID, LAND_TAG } from "./data";
 
-/** 土地类型 TODO 移到土壤模块去 */
-export type LandTag = "dirt" | "sand" | "stone" | "fungi" | "wood" | "water";
+export type LandTag = (typeof LAND_TAG)[number];
+
+export type LandId = (typeof LAND_ID)[number];
 
 /** 土地状态数据 */
 export type LandStateData = {
@@ -12,9 +14,9 @@ export type LandStateData = {
 
 export type LandData = {
   /** 土地方块 id */
-  blockId: Identifier;
+  blockId: LandId;
   /** 土地类型 */
-  tags: LandTag | LandTag[];
+  tags: LandTag[];
   /** 肥沃度 */
   fertility: number;
   /** 可供生长的 tick 总数(菌类会腐蚀木头) */
@@ -22,3 +24,9 @@ export type LandData = {
   /** 状态：例如湿润的土地 */
   state?: LandStateData | LandStateData[];
 } & VersionData;
+
+export type LandFilter = {
+  tags?: LandTag | LandTag[];
+  fertility?: [number, number];
+  tickCount?: [number, number];
+};

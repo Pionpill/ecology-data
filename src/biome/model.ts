@@ -59,9 +59,7 @@ export default class BiomeModel extends VersionModel {
       if (!mergedCategory.includes(biome.category)) return acc;
       const mergedTags = tags instanceof Array ? tags : [tags];
       if (!hasIntersection(mergedTags, biome.tags)) return acc;
-
-      acc.push(BiomeModel.fromData(biome));
-      return acc;
+      return [...acc, BiomeModel.fromData(biome)];
     }, [] as BiomeModel[]);
   };
 

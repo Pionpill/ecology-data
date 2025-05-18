@@ -1,6 +1,6 @@
 import type { LandData } from "./type";
 
-const LAND_DATA: Array<LandData> = [
+export const LAND_DATA: Array<LandData> = [
   {
     blockId: "minecraft:farmland",
     fertility: 120,
@@ -149,4 +149,32 @@ const LAND_DATA: Array<LandData> = [
   },
 ] as const;
 
-export default LAND_DATA;
+export const LAND_ID = [
+  "minecraft:farmland",
+  "minecraft:podzol",
+  "minecraft:grass",
+  "minecraft:grass_path",
+  "minecraft:dirt",
+  "minecraft:sand",
+  "minecraft:red_sand",
+  "minecraft:mycelium",
+  "minecraft:moss_block",
+  "minecraft:oak_wood",
+  "minecraft:stripped_oak_wood",
+  "minecraft:spruce_wood",
+  "minecraft:stripped_spruce_wood",
+  "minecraft:birch_wood",
+  "minecraft:stripped_birch_wood",
+  "minecraft:jungle_wood",
+  "minecraft:stripped_jungle_wood",
+  "minecraft:acacia_wood",
+  "minecraft:stripped_acacia_wood",
+  "minecraft:dark_oak_wood",
+  "minecraft:stripped_dark_oak_wood",
+  "minecraft:mangrove_wood",
+  "minecraft:stripped_mangrove_wood",
+  "minecraft:cherry_wood",
+  "minecraft:stripped_cherry_wood",
+] as const;
+
+export const LAND_TAG = ["dirt", "sand", "stone", "fungi", "wood", "water"];

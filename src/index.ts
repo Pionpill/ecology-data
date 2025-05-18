@@ -13,3 +13,6 @@ export {
   getDimensionName,
 } from "./biome";
 export type { BiomeCategory, BiomeFilter, BiomeId, BiomeTag, Dimension } from "./biome";
+
+export { EFFECT_ID, getEffectName } from "./effect";
+export type { EffectId } from "./effect";

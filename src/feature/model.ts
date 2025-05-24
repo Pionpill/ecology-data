@@ -40,7 +40,7 @@ export default class FeatureModel {
 
   /** 通过作物种子 id 获取缓存的特征实例 */
   static fromSeedId = (seedId: Identifier) => {
-    const blockPrefix = PlantModel.fromSeedId(seedId).blockPrefix;
+    const blockPrefix = PlantModel.getBySeedId(seedId).blockPrefix;
     return FeatureModel.fromPlantId(blockPrefix);
   };
 }

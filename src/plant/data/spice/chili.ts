@@ -1,6 +1,7 @@
-import type { PlantData } from "../type";
+import type { PlantData } from "../../type";
 
 const CHILI_PLANT: PlantData = {
+  beta: true,
   seedId: "ham:chili",
   blockPrefix: "ham:chili",
   type: "spice",
@@ -42,8 +43,12 @@ const CHILI_PLANT: PlantData = {
       height: [20, 32],
     },
     {
-      state: "fruit",
+      state: "mature",
       height: [24, 32],
+      harvest: {
+        convertBlock: "ham:chili_stage_2",
+        count: 3,
+      },
       loots: [
         {
           itemId: "ham:chili",

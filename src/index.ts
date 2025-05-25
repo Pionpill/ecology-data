@@ -27,7 +27,6 @@ export {
   getPlantStageStateName,
   getPlantTypeName,
 } from "./plant";
-
 export type {
   PlantFertilityInfo,
   PlantFilter,
@@ -37,3 +36,6 @@ export type {
   PlantStageState,
   PlantType,
 } from "./plant";
+
+export type { FeatureBiomeFilter, FeatureScatterInfo, FeatureOreInfo } from "./feature";
+export { OreFeatureModel, ScatterFeatureModel } from "./feature";

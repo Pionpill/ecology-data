@@ -983,4 +983,5 @@ export const BIOME_TAG = [
   "stone",
   "jagged_peaks",
   "grove",
+  "overworld",
 ] as const;

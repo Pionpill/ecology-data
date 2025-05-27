@@ -45,4 +45,7 @@ export default class ScatterFeatureModel extends FeatureModel {
     const blockPrefix = PlantModel.getBySeedId(seedId).blockPrefix;
     return ScatterFeatureModel.getByBlockId(blockPrefix);
   };
+
+  /** 获取所有特征实例 */
+  static getAll = () => PLANT_FEATURE_DATA.map((feature) => ScatterFeatureModel.fromData(feature));
 }

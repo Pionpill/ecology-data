@@ -45,4 +45,7 @@ export default class OreFeatureModel extends FeatureModel {
     const blockPrefix = PlantModel.getBySeedId(seedId).blockPrefix;
     return OreFeatureModel.getByBlockId(blockPrefix);
   };
+
+  /** 获取所有特征实例 */
+  static getAll = () => ORE_FEATURE_DATA.map((feature) => OreFeatureModel.fromData(feature));
 }

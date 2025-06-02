@@ -1,13 +1,21 @@
 {
   "name": "@ecology/data",
-  "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "data for minecraft ecology addon",
   "type": "module",
+  "main": "dist/lib/index.cjs",
+  "module": "dist/es/index.js",
+  "types": "dist/lib/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/**/*"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@typescript-eslint/eslint-plugin": "^8.28.0",

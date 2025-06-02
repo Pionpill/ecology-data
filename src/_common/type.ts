@@ -1,4 +1,4 @@
-import type { SaturationModifier, VanillaEffectId } from "./enum";
+import type { VanillaEffectId } from "./enum";
 
 /** 命名空间 ID，格式为 namespace:name */
 export type Identifier = string;
@@ -29,28 +29,6 @@ export type EffectInfo = {
   duration?: number;
   /** 强度，默认 0 */
   amplifier?: number;
-};
-
-/** 基础物品信息 */
-export type VanillaItemInfo = {
-  maxStackSize?: 64 | 32 | 16 | 8 | 4 | 2 | 1;
-  foodInfo?: VanillaFoodInfo | null;
-};
-
-/** 食物信息 */
-export type VanillaFoodInfo = {
-  /** 是否可以一直食用，默认 false */
-  canAlwaysEat?: boolean;
-  /** 冷却时间，默认 32 */
-  coolDownTime?: number;
-  /** 使用后效果 */
-  effects?: Array<EffectInfo>;
-  /** 饱食度 */
-  nutrition: number;
-  /** 饱食度修饰，默认 NORMAL */
-  saturationModifier?: SaturationModifier;
-  /** 使用后转换为的物品，默认 null */
-  usingConvertsTo?: string | null;
 };
 
 /** 支持的语言：中文，英文 */

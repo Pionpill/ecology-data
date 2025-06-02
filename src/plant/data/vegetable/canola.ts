@@ -3,7 +3,7 @@ import type { PlantData } from "../../type";
 const CANOLA_PLANT: PlantData = {
   seedId: "ham:canola_seeds",
   blockPrefix: "ham:canola",
-  type: "grain",
+  type: "vegetable",
   defaultGrowInfo: {
     temperature: {
       suit: [10, 25],

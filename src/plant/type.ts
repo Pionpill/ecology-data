@@ -1,4 +1,5 @@
 import type { Identifier, LootInfo, VersionData } from "../_common/type";
+import type { MATERIAL_TYPE } from "../item/data";
 import type { LandTag } from "../land";
 import type { PLANT_LOOT_TAG_DATA, PLANT_STAGE_STATE_DATA, PLANT_TYPE_DATA } from "./data";
 
@@ -95,6 +96,9 @@ export type PlantStageData = {
 
 /** 作物类型：主粮，菌类，香料，水果，蔬菜 */
 export type PlantType = (typeof PLANT_TYPE_DATA)[number];
+
+/** 原材料分类 */
+export type MaterialType = (typeof MATERIAL_TYPE)[number];
 
 /** 作物信息 */
 export type PlantData = {

@@ -7,7 +7,7 @@ import ENOKI_PLANT from "./fungi/enoki";
 import LENTINULA_PLANT from "./fungi/lentinula";
 import MATSUTAKE_PLANT from "./fungi/matsutake";
 import WOOD_EAR_PLANT from "./fungi/wood_ear";
-import CANOLA_PLANT from "./grain/canola";
+import CANOLA_PLANT from "./vegetable/canola";
 import CORN_PLANT from "./grain/corn";
 import GREEN_BEAN_PLANT from "./grain/green_bean";
 import PEANUT_PLANT from "./grain/peanut";

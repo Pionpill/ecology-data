@@ -39,3 +39,30 @@ export type {
 
 export type { FeatureBiomeFilter, FeatureScatterInfo, FeatureOreInfo } from "./feature";
 export { OreFeatureModel, ScatterFeatureModel } from "./feature";
+
+export type {
+  ItemFilter,
+  ItemId,
+  ItemTag,
+  ItemType,
+  NutritionInfo,
+  PlantFamily,
+  PlantProduce,
+  SaturationModifier,
+  VanillaFoodInfo,
+  VanillaItemInfo,
+} from "./item";
+export {
+  ItemModel,
+  ITEM_TYPE,
+  PLANT_FAMILY,
+  PLANT_PRODUCT,
+  MATERIAL_TYPE,
+  SATURATION_MODIFIER,
+  getSaturationModifierValue,
+  getSaturationModifierName,
+  getPlantFamilyName,
+  getPlantProduceName,
+  getMaterialTypeName,
+  getItemIdName,
+} from "./item";

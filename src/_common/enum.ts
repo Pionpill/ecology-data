@@ -74,18 +74,3 @@ export enum VanillaEffectId {
   /** 黑暗 */
   DARKNESS = "minecraft:darkness",
 }
-
-export enum SaturationModifier {
-  /** 贫瘠 */
-  POOR = 0.2,
-  /** 低 */
-  LOW = 0.6,
-  /** 正常 */
-  NORMAL = 1.2,
-  /** 良好 */
-  GOOD = 1.6,
-  /** 极佳 */
-  MAX = 2.0,
-  /** 超自然 */
-  SUPERNATURAL = 2.4,
-}

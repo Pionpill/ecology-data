@@ -1,11 +1,16 @@
 {
-  "name": "@ecology/data",
+  "name": "@ecology-mc/data",
   "version": "0.0.1",
   "description": "data for minecraft ecology addon",
   "type": "module",
+  "license": "MIT",
+  "repository": "https://github.com/Pionpill/ecology-data",
   "main": "dist/lib/index.cjs",
   "module": "dist/es/index.js",
   "types": "dist/lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

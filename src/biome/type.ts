@@ -22,17 +22,17 @@ export type BiomeData = {
 
 export type BiomeFilter = {
   /** 降雨范围 */
-  rainfall: [number, number];
+  rainfall?: [number, number];
   /** 温度范围 */
-  temperature: [number, number];
+  temperature?: [number, number];
   /** 生成概率范围 */
-  generate: [number, number];
+  generate?: [number, number];
   /** 所属维度 */
-  dimension: Dimension | Dimension[];
+  dimension?: Dimension | Dimension[];
   /** 所属分类 */
-  category: BiomeCategory | BiomeCategory[];
+  category?: BiomeCategory | BiomeCategory[];
   /** 标签 */
-  tags: BiomeTag | BiomeTag[];
+  tags?: BiomeTag | BiomeTag[];
 };
 
 export type Dimension = (typeof BIOME_DIMENSION)[number];

@@ -54,11 +54,11 @@ export default class BiomeModel extends VersionModel {
       if (temperature && !between(biome.temperature, temperature)) return acc;
       if (generate && (!biome.generate || !between(biome.generate, generate))) return acc;
       const mergedDimension = dimension instanceof Array ? dimension : [dimension];
-      if (!mergedDimension.includes(biome.dimension)) return acc;
+      if (dimension && !mergedDimension.includes(biome.dimension)) return acc;
       const mergedCategory = category instanceof Array ? category : [category];
-      if (!mergedCategory.includes(biome.category)) return acc;
+      if (category && !mergedCategory.includes(biome.category)) return acc;
       const mergedTags = tags instanceof Array ? tags : [tags];
-      if (!hasIntersection(mergedTags, biome.tags)) return acc;
+      if (tags && !hasIntersection(mergedTags, biome.tags)) return acc;
       return [...acc, BiomeModel.fromData(biome)];
     }, [] as BiomeModel[]);
   };

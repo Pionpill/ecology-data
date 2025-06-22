@@ -154,4 +154,5 @@ export const BIOME_TAG_LANG_ZH: Record<BiomeTag, string> = {
   stone: "石头",
   jagged_peaks: "锯齿山峰",
   grove: "林地",
+  overworld: "主世界",
 };

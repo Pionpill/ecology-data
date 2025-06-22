@@ -983,4 +983,5 @@ export const BIOME_TAG = [
   "warped_forest",
   "flower_forest",
   "basalt_deltas",
+  "overworld",
 ] as const;

@@ -154,4 +154,5 @@ export const BIOME_TAG_LANG_EN: Record<BiomeTag, string> = {
   stone: "Stone",
   jagged_peaks: "Jagged Peaks",
   grove: "Grove",
+  overworld: "Overworld",
 };

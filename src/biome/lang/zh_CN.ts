@@ -125,7 +125,7 @@ export const BIOME_TAG_LANG_ZH: Record<BiomeTag, string> = {
   beach: "海滩",
   rare: "稀有",
   cold: "寒冷",
-  store: "储存",
+  store: "海岸",
   savanna: "稀树草原",
   birch: "白桦",
   hills: "丘陵",
@@ -154,5 +154,4 @@ export const BIOME_TAG_LANG_ZH: Record<BiomeTag, string> = {
   stone: "石头",
   jagged_peaks: "锯齿山峰",
   grove: "林地",
-  overworld: "主世界",
 };

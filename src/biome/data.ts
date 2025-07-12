@@ -596,7 +596,7 @@ export const BIOME_DATA: Array<BiomeData> = [
     temperature: 0.7,
     rainfall: 0.8,
     dimension: "overworld",
-    category: "nether",
+    category: "forest",
     tags: ["flower_forest", "bee_habitat"],
     generate: 55,
     snowAccumulation: [0, 0.125],

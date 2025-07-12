@@ -4,7 +4,7 @@ export const between = (value: number, range: [number, number], include = true) 
   return include ? value >= min && value <= max : value > min && value < max;
 };
 
-/** 获取两个数组得交集 */
+/** 获取两个数组的交集 */
 export const getIntersection = <T = string>(arr1: Array<T>, arr2: Array<T>) => {
   const set = new Set<T>(arr1);
   const result = [] as Array<T>;

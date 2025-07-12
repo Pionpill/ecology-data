@@ -37,7 +37,7 @@ const getAllStageRange = (stageInfo: Array<PlantStageInfo>, key: "temperature" |
     ),
     suit: stageInfo.reduce(
       (acc, cur) => {
-        const curRange = cur.grow[key].can;
+        const curRange = cur.grow[key].suit;
         if (curRange[0] > acc[0]) acc[0] = curRange[0];
         if (curRange[1] < acc[1]) acc[1] = curRange[1];
         return acc;

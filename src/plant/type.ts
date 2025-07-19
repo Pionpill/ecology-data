@@ -43,6 +43,8 @@ export type PlantHarvestData = {
   count?: number;
 };
 
+export type PlantGrowPeriod = "sun" | "moon" | "all";
+
 /** 作物生长信息 */
 export type PlantGrowData<T extends PlantSuitInfo = PlantSuitInfo> = {
   /** 温度影响信息 */
@@ -58,7 +60,7 @@ export type PlantGrowData<T extends PlantSuitInfo = PlantSuitInfo> = {
   /** 不下雨信息 */
   unRainInfo?: PlantRainInfo;
   /** 允许生长的时刻，默认 sun */
-  period?: "sun" | "moon" | "all";
+  period?: PlantGrowPeriod;
   /** 是否仅能在室外生长，默认 true */
   outDoor?: boolean;
 } & FungiGrowData;
@@ -158,7 +160,7 @@ export type PlantFilter = {
     landTag: Array<LandTag | Identifier>;
   };
   /** 生长时刻 */
-  period?: "sun" | "moon" | "all";
+  period?: PlantGrowPeriod;
   /** 是否仅能在室外生长 */
   outDoor?: boolean;
   /** 掉落物 */

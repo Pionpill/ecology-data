@@ -3,6 +3,7 @@ export { default as PlantModel } from "./model";
 export type {
   PlantFertilityInfo,
   PlantFilter,
+  PlantGrowPeriod,
   PlantLootData,
   PlantLootTag,
   PlantStageInfo,

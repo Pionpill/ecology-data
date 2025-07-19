@@ -30,6 +30,7 @@ export {
 export type {
   PlantFertilityInfo,
   PlantFilter,
+  PlantGrowPeriod,
   PlantLootData,
   PlantLootTag,
   PlantStageInfo,

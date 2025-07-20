@@ -1,6 +1,6 @@
 {
   "name": "@ecology-mc/data",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "data for minecraft ecology addon",
   "type": "module",
   "license": "MIT",

@@ -1,7 +1,7 @@
 import type { PlantData } from "../../type";
 
 const CANOLA_PLANT: PlantData = {
-  seedId: "ham:canola_seeds",
+  seedId: "ham:canola",
   blockPrefix: "ham:canola",
   type: "vegetable",
   defaultGrowInfo: {
@@ -48,7 +48,7 @@ const CANOLA_PLANT: PlantData = {
       height: [41, 32],
       loots: [
         {
-          itemId: "ham:canola_seeds",
+          itemId: "ham:canola",
           chance: 100,
           count: 4,
         },
